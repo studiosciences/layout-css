@@ -25,6 +25,7 @@
   "scripts": {
     "clean": "rimraf ./build/*",
     "build": "webpack",
+    "docs": "jsdoc2md src/index.js > README.md",
     "test": "karma start karma.conf.js --single-run",
     "test:watch": "karma start karma.conf.js"
   },
@@ -33,6 +34,7 @@
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.4",
     "chai": "^4.2.0",
+    "jsdoc-to-markdown": "^4.0.1",
     "karma": "^3.1.4",
     "karma-babel-preprocessor": "^8.0.0-beta.0",
     "karma-chai": "^0.1.0",
@@ -46,7 +48,6 @@
     "webpack-dev-server": "3.1.4"
   },
   "dependencies": {
-    "jsdoc-to-markdown": "^4.0.1",
     "lodash": "^4.17.11"
   }
 }

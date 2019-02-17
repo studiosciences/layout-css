@@ -1,36 +1,32 @@
-# layout-css
+`layout-css` is a set of packages designed to make it simpler to validate css used
+to position components, ensuring that the consumer is not modify the appearance
+in an unsupportable way.
 
-A simple library to validate css only include properties related to layout. This contains three pieces which can be used separately, depending on your use case.
+## [layout-css](packages/layout-css)
 
-## validate
+A simple library to provide lists of css properties to be used to
+validate css provided to components to ensure it does not modify the
+appearance of the component.
 
-This validator will parse
-
-```es
-import validateLayoutCSS from "layout-css/validate";
-
-function updateCSS(css) {
-  validateLayoutCSS(css);
-}
-
-function updateCSSNoWidth(css) {
-  validateLayoutCSS(css, { exclude: ["width", "min-width", "max-width"] });
-}
+```js
+import { properties } from "layout-css";
 ```
 
-## Layout Properties
+This version of the library uses `kabob-case`, but a `camelCase` versions
+is available with the same API:
 
-If you are using another parser, you may wish to access the lists of layout
-properties directly to write your own plugin. This simply includes an array
-of properties used for layout.
-
-```es
-import layoutCSSProps from 'layout-css/props';
-import layoutCSSPropsCamel from 'layout-css/propsCamel';
-
-function validateStyles(styles) {
-  styles.map(key => if(layoutCSSProps.includes(key) || layoutCSSPropsCamel.includes(key)) {
-      throw new Error(`Invalid css property found: ${key}`);
-    });
-}
+```js
+import { properties } from "layout-css/camel";
 ```
+
+## [layout-css-validator](packages/layout-css-validator)
+
+A set of functions to ensure css does not include styles related to layout.
+This does require parsing the CSS with stylis. If styles are parsed in a
+different part of your stack, considering validating using one of the functions
+in [layout-css](packages/layout-css).
+
+## [layout-styles-validator](packages/layout-styles-validator)
+
+A set of functions to ensure a React style objects do not include styles
+related to layout.
