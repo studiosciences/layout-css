@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import properties, { propertiesExcluding } from './camel.js';
+import { properties, propertiesExcluding } from './camel.js';
 import { propertiesCamel as propertiesMock } from './mocks.js';
 
 describe('properties', function() {

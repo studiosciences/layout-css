@@ -46,6 +46,11 @@ versions.
 This function is memoized to minimize workload, given this function may be
 called many times with the same parameters.
 
+Example
+```
+propertiesExcluding(['width', 'min-width', 'max-width']);
+```
+
 **Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
 **Returns**: <code>array</code> - A filtered list of layout properties.  
 

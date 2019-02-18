@@ -20,8 +20,10 @@ import model from './model.js';
  * @returns {array}
  */
 
-const properties = modelToArray(model).reduce(kabobToCamelCaseReducer, []);
-export default properties;
+export const properties = modelToArray(model).reduce(
+  kabobToCamelCaseReducer,
+  []
+);
 
 /**
  * This function is memoized to minimize.

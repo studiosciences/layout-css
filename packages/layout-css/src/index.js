@@ -39,6 +39,11 @@ export const properties = modelToArray(model);
  * This function is memoized to minimize workload, given this function may be
  * called many times with the same parameters.
  *
+ * Example:
+ * ```js
+ * propertiesExcluding(['width', 'min-width', 'max-width']);
+ * ```
+ *
  * @param {array} exclude - An array of properties to remove from the layout properties list.
  * @returns {array} A filtered list of layout properties.
  */

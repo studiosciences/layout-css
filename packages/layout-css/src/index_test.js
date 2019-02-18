@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import properties, { propertiesExcluding } from './index.js';
+import { properties, propertiesExcluding } from './index.js';
 import { properties as propertiesMock } from './mocks.js';
 
 describe('properties', function() {
