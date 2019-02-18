@@ -2,14 +2,15 @@
 to position components, ensuring that the consumer is not modify the appearance
 in an unsupportable way.
 
-## [layout-css](packages/layout-css)
+## [@layout-css/properties](packages/properties)
 
 A simple library to provide lists of css properties to be used to
 validate css provided to components to ensure it does not modify the
 appearance of the component.
 
 ```js
-import properties, {
+import {
+  properties,
   propertiesExcluding,
   propertiesExcludingSize,
   propertiesExcludingWidth,
@@ -17,21 +18,28 @@ import properties, {
 } from "@layout-css/properties";
 ```
 
-This version of the library uses `kabob-case`, but a `camelCase` versions
-is available with the same API:
+## [@layout-css/properties-camel](packages/properties-camel)
+
+A camel case version of the previous libray.
 
 ```js
-import { properties } from "layout-css/camel";
+import {
+  properties,
+  propertiesExcluding,
+  propertiesExcludingSize,
+  propertiesExcludingWidth,
+  propertiesExcludingHeight
+} from "@layout-css/properties-camel";
 ```
 
-## [layout-css-validator](packages/layout-css-validator)
+## [@layout-css/validator](packages/validator)
 
 A set of functions to ensure css does not include styles related to layout.
 This does require parsing the CSS with stylis. If styles are parsed in a
 different part of your stack, considering validating using one of the functions
 in [layout-css](packages/layout-css).
 
-## [layout-styles-validator](packages/layout-styles-validator)
+## [@layout-css/react-styles-validator](packages/layout-styles-validator)
 
 A set of functions to ensure a React style objects do not include styles
 related to layout.
