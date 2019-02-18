@@ -1,0 +1,55 @@
+{
+  "name": "@layout-css/properties-camel",
+  "version": "0.0.1",
+  "description": "This library aids in filtering css to only those properties that support layout.",
+  "license": "MIT License",
+  "author": "Marc Robichaud",
+  "main": "build/index.js",
+  "contributors": [
+    {
+      "name": "Marc Robichaud",
+      "email": "marc@studiosciences.ca",
+      "url": "https://github.com/studiosciences"
+    }
+  ],
+  "keywords": [
+    "layout",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/studiosciences/layout-css"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf ./build/*",
+    "build": "webpack",
+    "docs": "jsdoc2md src/index.js > README.md",
+    "test": "karma start karma.conf.js --single-run",
+    "test:watch": "karma start karma.conf.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "chai": "^4.2.0",
+    "jsdoc-to-markdown": "^4.0.1",
+    "karma": "^3.1.4",
+    "karma-babel-preprocessor": "^8.0.0-beta.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^3.0.5",
+    "mocha": "^5.2.0",
+    "rimraf": "2.6.2",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "3.1.4"
+  },
+  "dependencies": {
+    "@layout-css/properties": "^0.0.1",
+    "lodash": "^4.17.11"
+  }
+}

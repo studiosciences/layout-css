@@ -4,7 +4,6 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     index: './src/index.js',
-    camel: './src/camel.js',
   },
   mode: 'development',
   output: {

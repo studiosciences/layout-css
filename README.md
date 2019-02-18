@@ -9,7 +9,12 @@ validate css provided to components to ensure it does not modify the
 appearance of the component.
 
 ```js
-import { properties } from "layout-css";
+import properties, {
+  propertiesExcluding,
+  propertiesExcludingSize,
+  propertiesExcludingWidth,
+  propertiesExcludingHeight
+} from "@layout-css/properties";
 ```
 
 This version of the library uses `kabob-case`, but a `camelCase` versions

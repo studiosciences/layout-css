@@ -1,9 +1,10 @@
 {
-  "name": "layout-css",
+  "name": "@layout-css/properties",
   "version": "0.0.1",
   "description": "This library aids in filtering css to only those properties that support layout.",
   "license": "MIT License",
   "author": "Marc Robichaud",
+  "main": "build/index.js",
   "contributors": [
     {
       "name": "Marc Robichaud",
@@ -12,7 +13,7 @@
     }
   ],
   "keywords": [
-    "react",
+    "layout",
     "css"
   ],
   "repository": {

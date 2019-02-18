@@ -1,5 +1,3 @@
-import { kabobToCamelCaseReducer } from './utils.js';
-
 export const properties = [
   'position',
   'top',
@@ -47,5 +45,3 @@ export const properties = [
   'place-self',
   'visibility',
 ];
-
-export const propertiesCamel = properties.reduce(kabobToCamelCaseReducer, []);
