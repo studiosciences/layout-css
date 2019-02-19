@@ -4,6 +4,12 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build": "lerna run build",
+    "docs": "lerna run docs",
+    "lint": "lerna run lint",
+    "test": "lerna run test"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
@@ -23,11 +29,5 @@
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "3.1.4"
-  },
-  "scripts": {
-    "build": "lerna run build",
-    "docs": "lerna run docs",
-    "lint": "lerna run lint",
-    "test": "lerna run test"
   }
 }

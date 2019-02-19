@@ -1,12 +1,12 @@
-import memoize from "lodash/memoize";
+import memoize from 'lodash/memoize';
 import {
   properties as propertiesKebob,
   propertiesExcluding as propertiesExcludingKebob,
   propertiesExcludingWidth as propertiesExcludingWidthKebob,
   propertiesExcludingHeight as propertiesExcludingHeightKebob,
-  propertiesExcludingSize as propertiesExcludingSizeKebob
-} from "@layout-css/properties";
-import { kabobToCamelCaseReducer, camelToKabobCaseReducer } from "./utils.js";
+  propertiesExcludingSize as propertiesExcludingSizeKebob,
+} from '@layout-css/properties';
+import { kabobToCamelCaseReducer, camelToKabobCaseReducer } from './utils.js';
 
 /**
  * @module layout-css
