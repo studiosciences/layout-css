@@ -26,6 +26,7 @@
   "scripts": {
     "clean": "rimraf ./build/*",
     "build": "webpack",
+    "start": "webpack -d --watch",
     "docs": "jsdoc2md src/index.js > README.md",
     "test": "karma start karma.conf.js --single-run",
     "test:watch": "karma start karma.conf.js"
