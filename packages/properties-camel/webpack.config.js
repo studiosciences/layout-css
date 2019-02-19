@@ -8,7 +8,8 @@ module.exports = {
   mode: "development",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "[name].js"
+    filename: "[name].js",
+    libraryTarget: "umd"
   },
   module: {
     rules: [
