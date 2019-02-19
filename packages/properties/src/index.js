@@ -2,10 +2,10 @@ import memoize from 'lodash/memoize';
 import { modelToArray, removePropFromModel } from './utils.js';
 import model from './model.js';
 /**
- * @description A simple library to provide lists of css properties to be used to
- * validate css provided to components to ensure it does not modify the
- * appearance of the component.
  * @module properties
+ * @description A simple library to provide lists of css properties applicable
+ * to layout. Components can use this to ensure consumers do not modify the
+ * appearance and adhere to supportable API.
  * ```js
  * import { properties } from '@layout-css/properties'
  * ```
