@@ -61,7 +61,7 @@ describe('propertiesExcluding', function() {
     assert.include(returnValue, 'flex-grow');
   });
   it("doesn't modify the model", function() {
-    const returnValue = propertiesExcluding(['flex-shrink']);
+    propertiesExcluding(['flex-shrink']);
     const returnValue2 = propertiesExcluding(['flex-grow']);
     assert.include(returnValue2, 'flex-shrink');
   });

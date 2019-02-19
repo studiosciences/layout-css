@@ -61,7 +61,7 @@ export default properties;
 export const propertiesExcluding = memoize(
   exclude => {
     const excludeKebobCase = exclude.reduce(camelToKabobCaseReducer, []);
-    const kebobArray = propertiesExcluding(excludeKebobCase);
+    const kebobArray = propertiesExcludingKebob(excludeKebobCase);
     return kebobArray.reduce(kabobToCamelCaseReducer, []);
   },
   exclude => exclude.toString(exclude)
@@ -91,7 +91,7 @@ export const propertiesExcludingWidth = propertiesExcludingWidthKebob.reduce(
  *
  * @constant {array}
  */
-export const propertiesExcludingHeight = propertiesExcludingWidthKebob.reduce(
+export const propertiesExcludingHeight = propertiesExcludingHeightKebob.reduce(
   kabobToCamelCaseReducer
 );
 /**

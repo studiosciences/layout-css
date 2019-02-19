@@ -3,5 +3,11 @@
   "private": true,
   "devDependencies": {
     "lerna": "^3.13.0"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "docs": "lerna run docs",
+    "lint": "lerna run lint",
+    "test": "lerna run test"
   }
 }
