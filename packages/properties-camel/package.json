@@ -55,5 +55,6 @@
   "dependencies": {
     "@layout-css/properties": "^0.0.1",
     "lodash": "^4.17.11"
-  }
+  },
+  "gitHead": "6504484076c4729e4028b5d3d17a8f6e4ba2482e"
 }
