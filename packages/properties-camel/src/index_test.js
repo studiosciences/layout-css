@@ -2,7 +2,7 @@ import { assert } from "chai";
 import { properties, propertiesExcluding } from "./index.js";
 import { properties as propertiesMock } from "./mocks.js";
 
-describe("properties", function() {
+describe.only("properties", function() {
   it("should return an array of strings", function() {
     assert.typeOf(properties, "Array");
     properties.forEach(val => assert.typeOf(val, "String"));

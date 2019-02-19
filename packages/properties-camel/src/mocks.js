@@ -8,7 +8,7 @@ export const properties = [
   "marginTop",
   "marginRight",
   "marginBottom",
-  "margin-left",
+  "marginLeft",
   "margin",
   "width",
   "minWidth",
