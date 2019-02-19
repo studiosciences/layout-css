@@ -2,10 +2,10 @@ import memoize from 'lodash/memoize';
 import { modelToArray, removePropFromModel } from './utils.js';
 import model from './model.js';
 /**
- * @module layout-css
  * @description A simple library to provide lists of css properties to be used to
  * validate css provided to components to ensure it does not modify the
  * appearance of the component.
+ * @module properties
  * ```js
  * import { properties } from '@layout-css/properties'
  * ```
@@ -42,7 +42,9 @@ export default properties;
  *
  * Example:
  * ```js
- * propertiesExcluding(['width', 'min-width', 'max-width']);
+ * import { propertiesExcluding } from '@layout-css/properties'
+ *
+ * const myProps = propertiesExcluding(['width', 'min-width', 'max-width']);
  * ```
  *
  * @param {array} exclude - An array of properties to remove from the layout properties list.
@@ -62,6 +64,12 @@ export const propertiesExcluding = memoize(
  * This is a shortcut to remove the `width`, `min-width` and `max-width` properties.
  * This is useful for components that have a fixed width. `flex-basis` is not
  * removed since it could be used for height or width.
+ *
+ *  Example:
+ * ```js
+ * import { propertiesExcludingWidth } from '@layout-css/properties'
+ * ```
+ *
  * @constant {array}
  */
 export const propertiesExcludingWidth = propertiesExcluding([
@@ -73,6 +81,11 @@ export const propertiesExcludingWidth = propertiesExcluding([
  * This is a shortcut to remove the `height`, `min-height` and `max-height` properties.
  * This is useful for components that have a fixed height. `flex-basis` is not
  * removed since it could be used for height or width.
+ *
+ * ```js
+ * import { propertiesExcludingHeight } from '@layout-css/properties'
+ * ```
+ *
  * @constant {array}
  */
 export const propertiesExcludingHeight = propertiesExcluding([
@@ -83,6 +96,11 @@ export const propertiesExcludingHeight = propertiesExcluding([
 /**
  * This is a shortcut to remove the flex-basis, height, width and related properties.
  * This is useful for components that have a fixed size.
+ *
+ * ```js
+ * import { propertiesExcludingSize } from '@layout-css/properties'
+ * ```
+ *
  * @constant {array}
  */
 export const propertiesExcludingSize = propertiesExcluding([

@@ -10,16 +10,16 @@ import { kabobToCamelCaseReducer, camelToKabobCaseReducer } from "./utils.js";
 
 /**
  * @module layout-css
- * @description A simple library to provide lists of css properties to be used to
- * validate css provided to components to ensure it does not modify the
- * appearance of the component.
+ * @description A simple library to provide lists of css properties applicable
+ * to layout. Components can use this to ensure consumers do not modify the
+ * appearance and adhere to supportable API.
  * ```js
  * import { properties } from '@layout-css/properties-camel'
  * ```
  * This version of the library uses `camelCase`, but a `kabob-case` version
  * is available with the same API:
  * ```js
- * import properties from 'layout-css/properties'
+ * import properties from 'layout-css/properties-camel'
  * ```
  */
 
@@ -50,6 +50,8 @@ export default properties;
  *
  * Example:
  * ```js
+ * import { propertiesExcluding } from '@layout-css/properties-camel'
+ *
  * propertiesExcluding(['width', 'minWidth', 'maxWidth']);
  * ```
  *
@@ -68,6 +70,11 @@ export const propertiesExcluding = memoize(
  * This is a shortcut to remove the `width`, `minWidth` and `maxWidth` properties.
  * This is useful for components that have a fixed width. `flexBasis` is not
  * removed since it could be used for height or width.
+ *
+ * ```js
+ * import { propertiesExcludingWidth } from '@layout-css/properties-camel'
+ * ```
+ *
  * @constant {array}
  */
 export const propertiesExcludingWidth = propertiesExcludingWidthKebob.reduce(
@@ -77,6 +84,11 @@ export const propertiesExcludingWidth = propertiesExcludingWidthKebob.reduce(
  * This is a shortcut to remove the `height`, `minHeight` and `maxHeight` properties.
  * This is useful for components that have a fixed height. `flexBasis` is not
  * removed since it could be used for height or width.
+ *
+ * ```js
+ * import { propertiesExcludingHeight } from '@layout-css/properties-camel'
+ * ```
+ *
  * @constant {array}
  */
 export const propertiesExcludingHeight = propertiesExcludingWidthKebob.reduce(
@@ -85,6 +97,11 @@ export const propertiesExcludingHeight = propertiesExcludingWidthKebob.reduce(
 /**
  * This is a shortcut to remove the flexBasis, height, width and related properties.
  * This is useful for components that have a fixed size.
+ *
+ * ```js
+ * import { propertiesExcludingSize } from '@layout-css/properties-camel'
+ * ```
+ *
  * @constant {array}
  */
 export const propertiesExcludingSize = propertiesExcludingSizeKebob.reduce(

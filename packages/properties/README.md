@@ -1,6 +1,6 @@
-<a name="module_layout-css"></a>
+<a name="module_properties"></a>
 
-## layout-css
+## properties
 A simple library to provide lists of css properties to be used to
 validate css provided to components to ensure it does not modify the
 appearance of the component.
@@ -14,26 +14,26 @@ import properties from 'layout-css/properties-camel'
 ```
 
 
-* [layout-css](#module_layout-css)
-    * [.properties](#module_layout-css.properties) : <code>array</code>
-    * [.propertiesExcluding](#module_layout-css.propertiesExcluding) ⇒ <code>array</code>
-    * [.propertiesExcludingWidth](#module_layout-css.propertiesExcludingWidth) : <code>array</code>
-    * [.propertiesExcludingHeight](#module_layout-css.propertiesExcludingHeight) : <code>array</code>
-    * [.propertiesExcludingSize](#module_layout-css.propertiesExcludingSize) : <code>array</code>
+* [properties](#module_properties)
+    * [.properties](#module_properties.properties) : <code>array</code>
+    * [.propertiesExcluding](#module_properties.propertiesExcluding) ⇒ <code>array</code>
+    * [.propertiesExcludingWidth](#module_properties.propertiesExcludingWidth) : <code>array</code>
+    * [.propertiesExcludingHeight](#module_properties.propertiesExcludingHeight) : <code>array</code>
+    * [.propertiesExcludingSize](#module_properties.propertiesExcludingSize) : <code>array</code>
 
-<a name="module_layout-css.properties"></a>
+<a name="module_properties.properties"></a>
 
-### layout-css.properties : <code>array</code>
+### properties.properties : <code>array</code>
 An array of all css properties that can be used for layout, including vendor
 prefixed versions. This is also the default export.
 ```js
 [ 'position', 'top', 'right', 'bottom', 'left', 'float', 'margin-top', ... ]
 ```
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
-<a name="module_layout-css.propertiesExcluding"></a>
+**Kind**: static constant of [<code>properties</code>](#module_properties)  
+<a name="module_properties.propertiesExcluding"></a>
 
-### layout-css.propertiesExcluding ⇒ <code>array</code>
+### properties.propertiesExcluding ⇒ <code>array</code>
 This function returns a properties list filtered remove any properties a component may
 not support, such as width. Any properties not matching are ignored.
 
@@ -48,36 +48,51 @@ called many times with the same parameters.
 
 Example:
 ```js
-propertiesExcluding(['width', 'min-width', 'max-width']);
+import { propertiesExcluding } from '@layout-css/properties'
+
+const myProps = propertiesExcluding(['width', 'min-width', 'max-width']);
 ```
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
+**Kind**: static constant of [<code>properties</code>](#module_properties)  
 **Returns**: <code>array</code> - A filtered list of layout properties.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | exclude | <code>array</code> | An array of properties to remove from the layout properties list. |
 
-<a name="module_layout-css.propertiesExcludingWidth"></a>
+<a name="module_properties.propertiesExcludingWidth"></a>
 
-### layout-css.propertiesExcludingWidth : <code>array</code>
+### properties.propertiesExcludingWidth : <code>array</code>
 This is a shortcut to remove the `width`, `min-width` and `max-width` properties.
 This is useful for components that have a fixed width. `flex-basis` is not
 removed since it could be used for height or width.
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
-<a name="module_layout-css.propertiesExcludingHeight"></a>
+ Example:
+```js
+import { propertiesExcludingWidth } from '@layout-css/properties'
+```
 
-### layout-css.propertiesExcludingHeight : <code>array</code>
+**Kind**: static constant of [<code>properties</code>](#module_properties)  
+<a name="module_properties.propertiesExcludingHeight"></a>
+
+### properties.propertiesExcludingHeight : <code>array</code>
 This is a shortcut to remove the `height`, `min-height` and `max-height` properties.
 This is useful for components that have a fixed height. `flex-basis` is not
 removed since it could be used for height or width.
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
-<a name="module_layout-css.propertiesExcludingSize"></a>
+```js
+import { propertiesExcludingHeight } from '@layout-css/properties'
+```
 
-### layout-css.propertiesExcludingSize : <code>array</code>
+**Kind**: static constant of [<code>properties</code>](#module_properties)  
+<a name="module_properties.propertiesExcludingSize"></a>
+
+### properties.propertiesExcludingSize : <code>array</code>
 This is a shortcut to remove the flex-basis, height, width and related properties.
 This is useful for components that have a fixed size.
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
+```js
+import { propertiesExcludingSize } from '@layout-css/properties'
+```
+
+**Kind**: static constant of [<code>properties</code>](#module_properties)  
