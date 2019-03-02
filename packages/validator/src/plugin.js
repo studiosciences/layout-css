@@ -12,7 +12,7 @@ import model from './model.js';
  * This version of the library uses `kabob-case`, but a `camelCase` version
  * is available with the same API:
  * ```js
- * import properties from 'layout-css/camel-properties'
+ * import properties from 'layout-css/properties-camel'
  * ```
  */
 
@@ -32,8 +32,8 @@ export default properties;
  * not support, such as width. Any properties not matching are ignored.
  *
  * This will also exclude any related shorthand,
- * longhand and prefixed properties. For instance, excluding flex-basis will
- * also exclude flex, since flex includes flex-basis. Excluding flex, will also
+ * longhand and prefixed properties. For instance, propertiesExcluding flex-basis will
+ * also exclude flex, since flex includes flex-basis. propertiesExcluding flex, will also
  * remove flex-grow, flex-shrink, flex-basis and all related vender prefixed
  * versions.
  *

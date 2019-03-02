@@ -26,16 +26,36 @@ const layoutProps = [
 
   {
     name: 'flex',
-    prefixes: ['-webkit-box-flex', '-ms-flex'],
+    prefixes: ['-webkit-box-flex', '-webkit-flex', '-moz-box-flex', '-ms-flex'],
     children: [
-      { name: 'flex-basis', prefixes: ['-ms-flex-preferred-size'] },
-      { name: 'flex-grow', prefixes: ['-ms-flex-positive'] },
-      { name: 'flex-shrink', prefixes: ['-ms-flex-negative'] },
+      {
+        name: 'flex-basis',
+        prefixes: ['-webkit-flex-basis', '-ms-flex-preferred-size'],
+      },
+      {
+        name: 'flex-grow',
+        prefixes: ['-webkit-flex-grow', '-ms-flex-positive'],
+      },
+      {
+        name: 'flex-shrink',
+        prefixes: ['-webkit-flex-shrink', '-ms-flex-negative'],
+      },
     ],
   },
 
-  { name: 'align-self', prefixes: ['-ms-grid-row-align, -ms-flex-item-align'] },
-  { name: 'order', prefixes: ['-ms-flex-order'] },
+  {
+    name: 'align-self',
+    prefixes: ['-webkit-align-self', '-ms-grid-row-align, -ms-flex-item-align'],
+  },
+  {
+    name: 'order',
+    prefixes: [
+      '-webkit-box-ordinal-group',
+      '-webkit-order',
+      '-moz-box-ordinal-group',
+      '-ms-flex-order',
+    ],
+  },
 
   {
     name: 'grid-area',
@@ -58,7 +78,7 @@ const layoutProps = [
   },
 
   { name: 'justify-self', prefixes: ['-ms-grid-column-align'] },
-  { name: 'place-self' },
+  { name: 'place-self', prefixes: ['-ms-grid-column-align'] },
 
   { name: 'visibility' },
 ];

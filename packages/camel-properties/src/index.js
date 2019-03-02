@@ -40,8 +40,8 @@ export default properties;
  * not support, such as width. Any properties not matching are ignored.
  *
  * This will also exclude any related shorthand,
- * longhand and prefixed properties. For instance, propertiesExcluding flexBasis will
- * also exclude flex, since flex includes flexBasis. propertiesExcluding flex, will also
+ * longhand and prefixed properties. For instance, excluding flexBasis will
+ * also exclude flex, since flex includes flexBasis. xcluding flex, will also
  * remove flexGrow, flexShrink, flexBasis and all related vender prefixed
  * versions.
  *

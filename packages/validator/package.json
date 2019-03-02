@@ -1,7 +1,7 @@
 {
-  "name": "@layout-css/properties-camel",
+  "name": "@layout-css/validator",
   "version": "0.0.1",
-  "description": "This library aids in filtering css to only those properties that support layout.",
+  "description": "This library valiates that css only includes properties related to layout.",
   "license": "MIT License",
   "author": "Marc Robichaud",
   "main": "build/index.js",
@@ -20,13 +20,10 @@
     "type": "git",
     "url": "https://github.com/studiosciences/layout-css"
   },
-  "files": [
-    "src"
-  ],
   "scripts": {
     "clean": "rimraf ./build/*",
-    "build": "webpack",
     "start": "webpack -d --watch",
+    "build": "webpack",
     "docs": "jsdoc2md src/index.js > README.md",
     "lint": "eslint src/*.js",
     "test": "karma start karma.conf.js --single-run",
@@ -37,7 +34,7 @@
   },
   "dependencies": {
     "@layout-css/properties": "^0.0.1",
-    "lodash": "^4.17.11"
-  },
-  "gitHead": "6504484076c4729e4028b5d3d17a8f6e4ba2482e"
+    "lodash": "^4.17.0",
+    "stylis": "^3.5.0"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@layout-css/properties",
+  "name": "@layout-css/camel-properties",
   "version": "0.0.1",
   "description": "This library aids in filtering css to only those properties that support layout.",
   "license": "MIT License",
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "clean": "rimraf ./build/*",
-    "start": "webpack -d --watch",
     "build": "webpack",
+    "start": "webpack -d --watch",
     "docs": "jsdoc2md src/index.js > README.md",
     "lint": "eslint src/*.js",
     "test": "karma start karma.conf.js --single-run",
@@ -33,6 +33,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@layout-css/properties": "^0.0.1",
     "lodash": "^4.17.11"
   },
   "gitHead": "6504484076c4729e4028b5d3d17a8f6e4ba2482e"
