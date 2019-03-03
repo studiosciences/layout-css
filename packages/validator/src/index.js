@@ -63,3 +63,8 @@ export function isValidLayoutExcluding(css, exclude) {
   const propertiesFiltered = propertiesExcluding(exclude);
   return cssMatchesList(css, propertiesFiltered);
 }
+
+export default {
+  isValidLayout,
+  isValidLayoutExcluding,
+};
