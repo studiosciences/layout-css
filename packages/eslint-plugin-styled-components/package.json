@@ -1,0 +1,25 @@
+{
+  "name": "@layout-css/eslint-plugin-styled-components",
+  "version": "0.0.4",
+  "description": "An ESLint plugin to validate styled-components do not modify component appearance during composition.",
+  "license": "MIT License",
+  "author": "Marc Robichaud",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.js --compilers js:babel-core/register",
+    "build": "babel ./rules --out-dir ./build"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "styled-components"
+  ],
+  "peerDependencies": {
+    "eslint": ">=0.8.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
