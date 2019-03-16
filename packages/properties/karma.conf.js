@@ -10,24 +10,25 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    browsers: ['jsdom'],
     singleRun: false,
     autoWatchBatchDelay: 300,
-    browserNoActivityTimeout: 3000000,
+    browserNoActivityTimeout: 3000,
+    hostname: '127.0.0.1',
 
-    files: ['./src/*_test.js'],
+    files: ['./test/*_test.js'],
 
     plugins: [
       'karma-chai',
       'karma-babel-preprocessor',
       'karma-mocha',
-      'karma-phantomjs-launcher',
+      'karma-jsdom-launcher',
       'karma-webpack',
     ],
 
     preprocessors: {
-      './src/index.js': ['webpack'],
-      './src/*_test.js': ['webpack'],
+      './src/index.js': ['babel'],
+      './test/*_test.js': ['babel'],
     },
 
     webpack: webpackConfig,

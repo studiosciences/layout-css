@@ -22,10 +22,10 @@
   },
   "scripts": {
     "clean": "rimraf ./build/*",
-    "start": "webpack -d --watch",
-    "build": "webpack",
+    "start": "babel ./src --watch --out-dir ./build",
+    "build": "babel ./src --out-dir ./build",
     "docs": "jsdoc2md src/index.js > README.md",
-    "lint": "eslint src/*.js",
+    "lint": "eslint src/*.js test/*.js",
     "test": "karma start karma.conf.js --single-run",
     "test:watch": "karma start karma.conf.js"
   },
@@ -35,5 +35,13 @@
   "dependencies": {
     "lodash": "^4.17.11"
   },
-  "gitHead": "6504484076c4729e4028b5d3d17a8f6e4ba2482e"
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "gitHead": "6504484076c4729e4028b5d3d17a8f6e4ba2482e",
+  "devDependencies": {
+    "karma-babel-preprocessor": "^8.0.0"
+  }
 }
