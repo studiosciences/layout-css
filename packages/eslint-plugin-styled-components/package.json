@@ -6,14 +6,20 @@
   "author": "Marc Robichaud",
   "main": "build/index.js",
   "scripts": {
-    "test": "mocha tests/**/*.js --compilers js:babel-core/register",
-    "build": "babel ./rules --out-dir ./build"
+    "clean": "rimraf ./build/*",
+    "test": "mocha tests/**/*.js --require @babel/register",
+    "test:watch": "mocha tests/**/*.js --require @babel/register -w",
+    "build": "babel ./src --out-dir ./build",
+    "lint": "eslint src/*.js"
   },
   "keywords": [
     "eslint",
     "eslintplugin",
     "styled-components"
   ],
+  "dependencies": {
+    "@layout-css/validator": "^0.0.4"
+  },
   "peerDependencies": {
     "eslint": ">=0.8.0"
   },
@@ -21,5 +27,8 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "devDependencies": {
+    "eslint-tester": "^0.8.2"
   }
 }

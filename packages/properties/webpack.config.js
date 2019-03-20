@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
     umdNamedDefine: true,
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
   },
