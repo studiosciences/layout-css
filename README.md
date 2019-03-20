@@ -14,8 +14,8 @@ import {
   propertiesExcluding,
   propertiesExcludingSize,
   propertiesExcludingWidth,
-  propertiesExcludingHeight
-} from "@layout-css/properties";
+  propertiesExcludingHeight,
+} from '@layout-css/properties';
 ```
 
 ## [@layout-css/properties-camel](packages/properties-camel)
@@ -28,8 +28,8 @@ import {
   propertiesExcluding,
   propertiesExcludingSize,
   propertiesExcludingWidth,
-  propertiesExcludingHeight
-} from "@layout-css/properties-camel";
+  propertiesExcludingHeight,
+} from '@layout-css/properties-camel';
 ```
 
 ## [@layout-css/validator](packages/validator)
@@ -39,7 +39,7 @@ This does require parsing the CSS with stylis. If styles are parsed in a
 different part of your stack, considering validating using one of the functions
 in [layout-css](packages/layout-css).
 
-## [@layout-css/react-styles-validator](packages/layout-styles-validator)
+## [@layout-css/eslint-plugin-styled-components](packages/eslint-plugin-styled-components)
 
-A set of functions to ensure a React style objects do not include styles
-related to layout.
+An ESLint plugin to validate a styled-component's appearance is not modified
+during composition.

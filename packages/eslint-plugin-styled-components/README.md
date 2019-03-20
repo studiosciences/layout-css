@@ -1,8 +1,11 @@
 # `@layout-css/eslint-plugin-styled-components`
 
+An ESLint plugin to validate a styled-component's appearance is not modified
+during composition.
+
 ## Install
 
-```bash
+```shell
 npm install @layout-css/eslint-plugin-styled-components --save-dev;
 
  -- or --
