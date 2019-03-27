@@ -1,36 +1,106 @@
-# layout-css
+## Functions
 
-A simple library to validate css only include properties related to layout. This contains three pieces which can be used separately, depending on your use case.
+<dl>
+<dt><a href="#findInvalidLayoutProperties">findInvalidLayoutProperties(css)</a> ⇒ <code>array</code></dt>
+<dd><p>This function extracts any css propertuy names that do not relate to external
+layout, such as color, background or padding. This is useful for validating
+compsing css and presenting the invalid properties in an error.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">import { findInvalidLayoutProperties } from &#39;@layout-css/validator&#39;
 
-## validate
+const invalidLayoutProperties = findInvalidLayoutProperties(css);
+</code></pre>
+</dd>
+<dt><a href="#isValidLayout">isValidLayout(css)</a> ⇒ <code>boolean</code></dt>
+<dd><p>This function validates that a block of css only includes layout and not
+properties that modifies appearance.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">import { isValidLayout } from &#39;@layout-css/validator&#39;
 
-This validator will parse
+const isLayout = isValidLayoutExcluding(css, [&#39;margin&#39;]);
+</code></pre>
+</dd>
+<dt><a href="#isValidLayoutExcluding">isValidLayoutExcluding(css, exclude)</a> ⇒ <code>boolean</code></dt>
+<dd><p>This function validates that a block of css only includes layout, excluding
+the passed properties.</p>
+<p>This will also exclude any related shorthand,
+longhand and prefixed properties. For instance, excluding flex-basis will
+also exclude flex, since flex includes flex-basis. propertiesExcluding flex, will also
+remove flex-grow, flex-shrink, flex-basis and all related vender prefixed
+versions.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">import { isValidLayoutExcluding } from &#39;@layout-css/validator&#39;
 
-```es
-import validateLayoutCSS from "layout-css/validate";
+const isLayout = isValidLayoutExcluding(css, [&#39;margin&#39;]);
+</code></pre>
+</dd>
+</dl>
 
-function updateCSS(css) {
-  validateLayoutCSS(css);
-}
+<a name="findInvalidLayoutProperties"></a>
 
-function updateCSSNoWidth(css) {
-  validateLayoutCSS(css, { exclude: ["width", "min-width", "max-width"] });
-}
+## findInvalidLayoutProperties(css) ⇒ <code>array</code>
+This function extracts any css propertuy names that do not relate to external
+layout, such as color, background or padding. This is useful for validating
+compsing css and presenting the invalid properties in an error.
+
+Example:
+```js
+import { findInvalidLayoutProperties } from '@layout-css/validator'
+
+const invalidLayoutProperties = findInvalidLayoutProperties(css);
 ```
 
-## Layout Properties
+**Kind**: global function  
+**Returns**: <code>array</code> - .  
 
-If you are using another parser, you may wish to access the lists of layout
-properties directly to write your own plugin. This simply includes an array
-of properties used for layout.
+| Param | Type | Description |
+| --- | --- | --- |
+| css | <code>string</code> | A block of css for validation. |
 
-```es
-import layoutCSSProps from 'layout-css/props';
-import layoutCSSPropsCamel from 'layout-css/propsCamel';
+<a name="isValidLayout"></a>
 
-function validateStyles(styles) {
-  styles.map(key => if(layoutCSSProps.includes(key) || layoutCSSPropsCamel.includes(key)) {
-      throw new Error(`Invalid css property found: ${key}`);
-    });
-}
+## isValidLayout(css) ⇒ <code>boolean</code>
+This function validates that a block of css only includes layout and not
+properties that modifies appearance.
+
+Example:
+```js
+import { isValidLayout } from '@layout-css/validator'
+
+const isLayout = isValidLayoutExcluding(css, ['margin']);
 ```
+
+**Kind**: global function  
+**Returns**: <code>boolean</code> - .  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| css | <code>string</code> | A block of css for validation. |
+
+<a name="isValidLayoutExcluding"></a>
+
+## isValidLayoutExcluding(css, exclude) ⇒ <code>boolean</code>
+This function validates that a block of css only includes layout, excluding
+the passed properties.
+
+This will also exclude any related shorthand,
+longhand and prefixed properties. For instance, excluding flex-basis will
+also exclude flex, since flex includes flex-basis. propertiesExcluding flex, will also
+remove flex-grow, flex-shrink, flex-basis and all related vender prefixed
+versions.
+
+Example:
+```js
+import { isValidLayoutExcluding } from '@layout-css/validator'
+
+const isLayout = isValidLayoutExcluding(css, ['margin']);
+```
+
+**Kind**: global function  
+**Returns**: <code>boolean</code> - .  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| css | <code>string</code> | A block of css for validation. |
+| exclude | <code>array</code> | An array of properties to remove from the layout properties list. |
+

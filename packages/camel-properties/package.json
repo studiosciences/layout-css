@@ -1,6 +1,6 @@
 {
   "name": "@layout-css/camel-properties",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This library aids in filtering css to only those properties that support layout.",
   "license": "MIT License",
   "author": "Marc Robichaud",
@@ -33,7 +33,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@layout-css/properties": "^0.0.4",
+    "@layout-css/properties": "^0.1.0",
     "lodash": "^4.17.11"
   },
   "babel": {

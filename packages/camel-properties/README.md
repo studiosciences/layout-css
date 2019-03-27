@@ -1,6 +1,6 @@
-<a name="module_layout-css"></a>
+<a name="module_@layout-css/camel-properties"></a>
 
-## layout-css
+## @layout-css/camel-properties
 A simple library to provide lists of css properties applicable
 to layout. Components can use this to ensure consumers do not modify the
 appearance and adhere to supportable API.
@@ -14,32 +14,32 @@ import properties from 'layout-css/properties-camel'
 ```
 
 
-* [layout-css](#module_layout-css)
-    * [.properties](#module_layout-css.properties) : <code>array</code>
-    * [.propertiesExcluding](#module_layout-css.propertiesExcluding) ⇒ <code>array</code>
-    * [.propertiesExcludingWidth](#module_layout-css.propertiesExcludingWidth) : <code>array</code>
-    * [.propertiesExcludingHeight](#module_layout-css.propertiesExcludingHeight) : <code>array</code>
-    * [.propertiesExcludingSize](#module_layout-css.propertiesExcludingSize) : <code>array</code>
+* [@layout-css/camel-properties](#module_@layout-css/camel-properties)
+    * [.properties](#module_@layout-css/camel-properties.properties) : <code>array</code>
+    * [.propertiesExcluding](#module_@layout-css/camel-properties.propertiesExcluding) ⇒ <code>array</code>
+    * [.propertiesExcludingWidth](#module_@layout-css/camel-properties.propertiesExcludingWidth) : <code>array</code>
+    * [.propertiesExcludingHeight](#module_@layout-css/camel-properties.propertiesExcludingHeight) : <code>array</code>
+    * [.propertiesExcludingSize](#module_@layout-css/camel-properties.propertiesExcludingSize) : <code>array</code>
 
-<a name="module_layout-css.properties"></a>
+<a name="module_@layout-css/camel-properties.properties"></a>
 
-### layout-css.properties : <code>array</code>
+### @layout-css/camel-properties.properties : <code>array</code>
 An array of all css properties that can be used for layout, including vendor
 prefixed versions. This is also the default export.
 ```js
 [ 'position', 'top', 'right', 'bottom', 'left', 'float', 'margin-top', ... ]
 ```
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
-<a name="module_layout-css.propertiesExcluding"></a>
+**Kind**: static constant of [<code>@layout-css/camel-properties</code>](#module_@layout-css/camel-properties)  
+<a name="module_@layout-css/camel-properties.propertiesExcluding"></a>
 
-### layout-css.propertiesExcluding ⇒ <code>array</code>
+### @layout-css/camel-properties.propertiesExcluding ⇒ <code>array</code>
 This function returns a properties list filtered remove any properties a component may
 not support, such as width. Any properties not matching are ignored.
 
 This will also exclude any related shorthand,
-longhand and prefixed properties. For instance, propertiesExcluding flexBasis will
-also exclude flex, since flex includes flexBasis. propertiesExcluding flex, will also
+longhand and prefixed properties. For instance, excluding flexBasis will
+also exclude flex, since flex includes flexBasis. xcluding flex, will also
 remove flexGrow, flexShrink, flexBasis and all related vender prefixed
 versions.
 
@@ -53,16 +53,16 @@ import { propertiesExcluding } from '@layout-css/properties-camel'
 propertiesExcluding(['width', 'minWidth', 'maxWidth']);
 ```
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
+**Kind**: static constant of [<code>@layout-css/camel-properties</code>](#module_@layout-css/camel-properties)  
 **Returns**: <code>array</code> - A filtered list of layout properties.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | exclude | <code>array</code> | An array of properties to remove from the layout properties list. |
 
-<a name="module_layout-css.propertiesExcludingWidth"></a>
+<a name="module_@layout-css/camel-properties.propertiesExcludingWidth"></a>
 
-### layout-css.propertiesExcludingWidth : <code>array</code>
+### @layout-css/camel-properties.propertiesExcludingWidth : <code>array</code>
 This is a shortcut to remove the `width`, `minWidth` and `maxWidth` properties.
 This is useful for components that have a fixed width. `flexBasis` is not
 removed since it could be used for height or width.
@@ -71,10 +71,10 @@ removed since it could be used for height or width.
 import { propertiesExcludingWidth } from '@layout-css/properties-camel'
 ```
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
-<a name="module_layout-css.propertiesExcludingHeight"></a>
+**Kind**: static constant of [<code>@layout-css/camel-properties</code>](#module_@layout-css/camel-properties)  
+<a name="module_@layout-css/camel-properties.propertiesExcludingHeight"></a>
 
-### layout-css.propertiesExcludingHeight : <code>array</code>
+### @layout-css/camel-properties.propertiesExcludingHeight : <code>array</code>
 This is a shortcut to remove the `height`, `minHeight` and `maxHeight` properties.
 This is useful for components that have a fixed height. `flexBasis` is not
 removed since it could be used for height or width.
@@ -83,10 +83,10 @@ removed since it could be used for height or width.
 import { propertiesExcludingHeight } from '@layout-css/properties-camel'
 ```
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
-<a name="module_layout-css.propertiesExcludingSize"></a>
+**Kind**: static constant of [<code>@layout-css/camel-properties</code>](#module_@layout-css/camel-properties)  
+<a name="module_@layout-css/camel-properties.propertiesExcludingSize"></a>
 
-### layout-css.propertiesExcludingSize : <code>array</code>
+### @layout-css/camel-properties.propertiesExcludingSize : <code>array</code>
 This is a shortcut to remove the flexBasis, height, width and related properties.
 This is useful for components that have a fixed size.
 
@@ -94,4 +94,4 @@ This is useful for components that have a fixed size.
 import { propertiesExcludingSize } from '@layout-css/properties-camel'
 ```
 
-**Kind**: static constant of [<code>layout-css</code>](#module_layout-css)  
+**Kind**: static constant of [<code>@layout-css/camel-properties</code>](#module_@layout-css/camel-properties)  

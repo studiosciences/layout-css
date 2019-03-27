@@ -1,8 +1,20 @@
-import memoize from 'lodash/memoize';
-import { modelToArray, removePropFromModel } from './utils.js';
-import model from './model.js';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.propertiesExcludingSize = exports.propertiesExcludingHeight = exports.propertiesExcludingWidth = exports.propertiesExcluding = exports.default = exports.properties = void 0;
+
+var _memoize = _interopRequireDefault(require("lodash/memoize"));
+
+var _utils = require("./utils.js");
+
+var _model = _interopRequireDefault(require("./model.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
- * @module @layout-css/properties
+ * @module properties
  * @description A simple library to provide lists of css properties applicable
  * to layout. Components can use this to ensure consumers do not modify the
  * appearance and adhere to supportable API.
@@ -12,7 +24,7 @@ import model from './model.js';
  * This version of the library uses `kabob-case`, but a `camelCase` version
  * is available with the same API:
  * ```js
- * import properties from 'layout-css/camel-properties'
+ * import properties from 'layout-css/properties-camel'
  * ```
  */
 
@@ -24,16 +36,16 @@ import model from './model.js';
  * ```
  * @constant {array}
  */
-export const properties = modelToArray(model);
-export default properties;
-
+var properties = (0, _utils.modelToArray)(_model.default);
+exports.properties = properties;
+var _default = properties;
 /**
  * This function returns a properties list filtered remove any properties a component may
  * not support, such as width. Any properties not matching are ignored.
  *
  * This will also exclude any related shorthand,
- * longhand and prefixed properties. For instance, excluding flex-basis will
- * also exclude flex, since flex includes flex-basis. Excluding flex, will also
+ * longhand and prefixed properties. For instance, propertiesExcluding flex-basis will
+ * also exclude flex, since flex includes flex-basis. propertiesExcluding flex, will also
  * remove flex-grow, flex-shrink, flex-basis and all related vender prefixed
  * versions.
  *
@@ -50,16 +62,17 @@ export default properties;
  * @param {array} exclude - An array of properties to remove from the layout properties list.
  * @returns {array} A filtered list of layout properties.
  */
-export const propertiesExcluding = memoize(
-  exclude => {
-    let updatedModel = model;
-    exclude.forEach(
-      name => (updatedModel = removePropFromModel(name, updatedModel))
-    );
-    return modelToArray(updatedModel);
-  },
-  exclude => exclude.toString(exclude)
-);
+
+exports.default = _default;
+var propertiesExcluding = (0, _memoize.default)(function (exclude) {
+  var updatedModel = _model.default;
+  exclude.forEach(function (name) {
+    return updatedModel = (0, _utils.removePropFromModel)(name, updatedModel);
+  });
+  return (0, _utils.modelToArray)(updatedModel);
+}, function (exclude) {
+  return exclude.toString(exclude);
+});
 /**
  * This is a shortcut to remove the `width`, `min-width` and `max-width` properties.
  * This is useful for components that have a fixed width. `flex-basis` is not
@@ -72,11 +85,9 @@ export const propertiesExcluding = memoize(
  *
  * @constant {array}
  */
-export const propertiesExcludingWidth = propertiesExcluding([
-  'width',
-  'min-width',
-  'max-width',
-]);
+
+exports.propertiesExcluding = propertiesExcluding;
+var propertiesExcludingWidth = propertiesExcluding(['width', 'min-width', 'max-width']);
 /**
  * This is a shortcut to remove the `height`, `min-height` and `max-height` properties.
  * This is useful for components that have a fixed height. `flex-basis` is not
@@ -88,11 +99,9 @@ export const propertiesExcludingWidth = propertiesExcluding([
  *
  * @constant {array}
  */
-export const propertiesExcludingHeight = propertiesExcluding([
-  'height',
-  'min-height',
-  'max-height',
-]);
+
+exports.propertiesExcludingWidth = propertiesExcludingWidth;
+var propertiesExcludingHeight = propertiesExcluding(['height', 'min-height', 'max-height']);
 /**
  * This is a shortcut to remove the flex-basis, height, width and related properties.
  * This is useful for components that have a fixed size.
@@ -103,12 +112,7 @@ export const propertiesExcludingHeight = propertiesExcluding([
  *
  * @constant {array}
  */
-export const propertiesExcludingSize = propertiesExcluding([
-  'width',
-  'min-width',
-  'max-width',
-  'flex-basis',
-  'height',
-  'min-height',
-  'max-height',
-]);
+
+exports.propertiesExcludingHeight = propertiesExcludingHeight;
+var propertiesExcludingSize = propertiesExcluding(['width', 'min-width', 'max-width', 'flex-basis', 'height', 'min-height', 'max-height']);
+exports.propertiesExcludingSize = propertiesExcludingSize;

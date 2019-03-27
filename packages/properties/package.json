@@ -1,6 +1,6 @@
 {
   "name": "@layout-css/properties",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "This library aids in filtering css to only those properties that support layout.",
   "license": "MIT License",
   "author": "Marc Robichaud",
