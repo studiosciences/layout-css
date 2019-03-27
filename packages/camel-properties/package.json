@@ -21,13 +21,13 @@
     "url": "https://github.com/studiosciences/layout-css"
   },
   "scripts": {
-    "clean": "rimraf ./build/*",
-    "build": "webpack",
-    "start": "webpack -d --watch",
+    "clean": "rimraf ./lib/*",
+    "start": "babel ./src --watch --out-dir ./lib",
+    "build": "babel ./src --out-dir ./lib",
     "docs": "jsdoc2md src/index.js > README.md",
-    "lint": "eslint src/*.js",
-    "test": "karma start karma.conf.js --single-run",
-    "test:watch": "karma start karma.conf.js"
+    "lint": "eslint src/*.js test/*.js",
+    "test": "mocha --require @babel/register",
+    "test:watch": "mocha -w --require @babel/register"
   },
   "publishConfig": {
     "access": "public"
@@ -35,6 +35,11 @@
   "dependencies": {
     "@layout-css/properties": "^0.0.4",
     "lodash": "^4.17.11"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "gitHead": "6504484076c4729e4028b5d3d17a8f6e4ba2482e"
 }
