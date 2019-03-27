@@ -24,10 +24,17 @@
   "peerDependencies": {
     "eslint": ">=0.8.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "babel": {
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/studiosciences/layout-css"
   },
   "devDependencies": {
     "eslint-tester": "^0.8.2"
