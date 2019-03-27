@@ -4,7 +4,7 @@
   "description": "This library aids in filtering css to only those properties that support layout.",
   "license": "MIT License",
   "author": "Marc Robichaud",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "contributors": [
     {
       "name": "Marc Robichaud",
@@ -21,19 +21,24 @@
     "url": "https://github.com/studiosciences/layout-css"
   },
   "scripts": {
-    "clean": "rimraf ./build/*",
-    "start": "webpack -d --watch",
-    "build": "webpack",
+    "clean": "rimraf ./lib/*",
+    "start": "babel ./src --watch --out-dir ./lib",
+    "build": "babel ./src --out-dir ./lib",
     "docs": "jsdoc2md src/index.js > README.md",
-    "lint": "eslint src/*.js",
-    "test": "karma start karma.conf.js --single-run",
-    "test:watch": "karma start karma.conf.js"
+    "lint": "eslint src/*.js test/*.js",
+    "test": "mocha --require @babel/register",
+    "test:watch": "mocha -w --require @babel/register"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "lodash": "^4.17.11"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "gitHead": "6504484076c4729e4028b5d3d17a8f6e4ba2482e"
 }

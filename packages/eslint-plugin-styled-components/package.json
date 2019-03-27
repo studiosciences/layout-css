@@ -4,13 +4,15 @@
   "description": "An ESLint plugin to validate styled-components do not modify component appearance during composition.",
   "license": "MIT License",
   "author": "Marc Robichaud",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf ./build/*",
-    "test": "mocha tests/**/*.js --require @babel/register",
-    "test:watch": "mocha tests/**/*.js --require @babel/register -w",
-    "build": "babel ./src --out-dir ./build",
-    "lint": "eslint src/*.js"
+    "clean": "rimraf ./lib/*",
+    "start": "babel ./src --watch --out-dir ./lib",
+    "build": "babel ./src --out-dir ./lib",
+    "docs": "jsdoc2md src/index.js > README.md",
+    "lint": "eslint src/*.js test/*.js",
+    "test": "mocha --require @babel/register",
+    "test:watch": "mocha -w --require @babel/register"
   },
   "keywords": [
     "eslint",

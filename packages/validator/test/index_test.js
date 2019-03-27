@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { isValidLayout, isValidLayoutExcluding } from './index.js';
+import { isValidLayout, isValidLayoutExcluding } from '../src/index.js';
 
 describe('isValidLayout', function() {
   it('should return false', function() {
