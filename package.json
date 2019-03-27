@@ -8,7 +8,8 @@
     "build": "lerna run build",
     "docs": "lerna run docs",
     "lint": "lerna run lint",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "format": "yarn prettier \"packages/*/src/**.js\" \"packages/*/test/**.js\" --write"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
