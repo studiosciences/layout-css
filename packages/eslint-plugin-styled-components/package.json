@@ -9,7 +9,6 @@
     "clean": "rimraf ./lib/*",
     "start": "babel ./src --watch --out-dir ./lib",
     "build": "babel ./src --out-dir ./lib",
-    "docs": "jsdoc2md src/index.js > README.md",
     "lint": "eslint src/*.js test/*.js",
     "test": "mocha --require @babel/register",
     "test:watch": "mocha -w --require @babel/register"

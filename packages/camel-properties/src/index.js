@@ -9,7 +9,7 @@ import {
 import { kabobToCamelCaseReducer, camelToKabobCaseReducer } from './utils.js';
 
 /**
- * @module layout-css
+ * @module @layout-css/camel-properties
  * @description A simple library to provide lists of css properties applicable
  * to layout. Components can use this to ensure consumers do not modify the
  * appearance and adhere to supportable API.

@@ -31,20 +31,15 @@ function findPropertiesNotInList(css, propertyList) {
 }
 
 /**
- * This function returns a properties list filtered remove any properties a component may
- * not support, such as width. Any properties not matching are ignored.
- *
- * This will also exclude any related shorthand,
- * longhand and prefixed properties. For instance, excluding flex-basis will
- * also exclude flex, since flex includes flex-basis. propertiesExcluding flex, will also
- * remove flex-grow, flex-shrink, flex-basis and all related vender prefixed
- * versions.
+ * This function extracts any css propertuy names that do not relate to external
+ * layout, such as color, background or padding. This is useful for validating
+ * compsing css and presenting the invalid properties in an error.
  *
  * Example:
  * ```js
- * import { isValidLayoutExcluding } from '@layout-css/validator'
+ * import { findInvalidLayoutProperties } from '@layout-css/validator'
  *
- * const isLayout = isValidLayoutExcluding(css, ['margin']);
+ * const invalidLayoutProperties = findInvalidLayoutProperties(css);
  * ```
  *
  * @param {string} css - A block of css for validation.
@@ -60,24 +55,17 @@ function cssMatchesList(css, propertyList) {
 }
 
 /**
- * This function returns a properties list filtered remove any properties a component may
- * not support, such as width. Any properties not matching are ignored.
- *
- * This will also exclude any related shorthand,
- * longhand and prefixed properties. For instance, excluding flex-basis will
- * also exclude flex, since flex includes flex-basis. propertiesExcluding flex, will also
- * remove flex-grow, flex-shrink, flex-basis and all related vender prefixed
- * versions.
+ * This function validates that a block of css only includes layout and not
+ * properties that modifies appearance.
  *
  * Example:
  * ```js
- * import { isValidLayoutExcluding } from '@layout-css/validator'
+ * import { isValidLayout } from '@layout-css/validator'
  *
  * const isLayout = isValidLayoutExcluding(css, ['margin']);
  * ```
  *
  * @param {string} css - A block of css for validation.
- * @param {array} exclude - An array of properties to remove from the layout properties list.
  * @returns {boolean}.
  */
 
@@ -86,8 +74,8 @@ export function isValidLayout(css) {
 }
 
 /**
- * This function returns a properties list filtered remove any properties a component may
- * not support, such as width. Any properties not matching are ignored.
+ * This function validates that a block of css only includes layout, excluding
+ * the passed properties.
  *
  * This will also exclude any related shorthand,
  * longhand and prefixed properties. For instance, excluding flex-basis will
