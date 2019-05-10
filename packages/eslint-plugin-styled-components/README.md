@@ -3,6 +3,16 @@
 An ESLint plugin to validate a styled-component's appearance is not modified
 during composition.
 
+The following example will error because the `Button` component should not
+have its background color changed. This is likely to hover or focus states, or may break if future changes are made to the appearance
+of `Button`.
+
+```js
+const MyButton = styled(Button)`
+  background-color: red;
+`;
+```
+
 ## Install
 
 ```shell
