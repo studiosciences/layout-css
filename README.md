@@ -18,7 +18,7 @@ import {
 } from '@layout-css/properties';
 ```
 
-## [@layout-css/properties-camel](packages/properties-camel)
+## [@layout-css/camel-properties](packages/camel-properties)
 
 A camel case version of the previous library.
 
@@ -29,7 +29,7 @@ import {
   propertiesExcludingSize,
   propertiesExcludingWidth,
   propertiesExcludingHeight,
-} from '@layout-css/properties-camel';
+} from '@layout-css/camel-properties';
 ```
 
 ## [@layout-css/validator](packages/validator)
