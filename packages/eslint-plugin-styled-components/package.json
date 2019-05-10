@@ -1,6 +1,6 @@
 {
   "name": "@layout-css/eslint-plugin-styled-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An ESLint plugin to validate styled-components do not modify component appearance during composition.",
   "license": "MIT License",
   "author": "Marc Robichaud",
@@ -19,7 +19,7 @@
     "styled-components"
   ],
   "dependencies": {
-    "@layout-css/validator": "^0.1.0"
+    "@layout-css/validator": "^0.1.1"
   },
   "peerDependencies": {
     "eslint": ">=0.8.0"
