@@ -18,7 +18,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/studiosciences/layout-css"
+    "url": "https://github.com/studiosciences/layout-css.git",
+    "directory": "packages/validator"
   },
   "scripts": {
     "clean": "rimraf ./lib/*",
